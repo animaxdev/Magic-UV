@@ -161,7 +161,7 @@ class MUV_OT_ClipUV(bpy.types.Operator):
 
         if not bm.loops.layers.uv:
             obj.report({'WARNING'}, "Object must have more than one UV map")
-            return None
+            return {'CANCELLED'}
 
         uv_layer = bm.loops.layers.uv.verify()
 
